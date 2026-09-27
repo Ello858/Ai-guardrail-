@@ -2,6 +2,13 @@
 
 A hackathon demo that monitors prompts and local LLM responses, records independent safety votes, and contains the system when a vote threshold is reached. A React dashboard displays the vote history and provides a manual kill switch.
 
+## Tech Stack
+
+- **Languages:** Python, TypeScript, CSS
+- **Backend:** Flask, Flask-CORS, Requests, psutil
+- **Frontend:** React, TanStack Start/Router, Vite, Tailwind CSS, Recharts
+- **Local model runtime:** Ollama with `llama3.2`
+
 ## How It Works
 
 The dashboard sends a prompt to the Flask API. The API asks the local Ollama `llama3.2` model for a response, then runs four independent monitors:
