@@ -124,6 +124,7 @@ def agent5_executor(votes: list) -> dict:
         summary = f"{flagged_count}-of-{total} — below threshold, no action"
 
     return {
+        
         "agent": "Agent 5 (Executor)",
         "decision": decision,
         "summary": summary,

@@ -8,15 +8,12 @@ import {
   CircleGauge,
   Clock3,
   FileClock,
-  FlaskConical,
   LogOut,
   Search,
-  Settings,
   ShieldAlert,
   ShieldCheck,
   Siren,
   Skull,
-  UserRoundCheck,
 } from "lucide-react";
 import {
   CartesianGrid,
@@ -62,9 +59,6 @@ const navItems = [
   ["Dashboard", CircleGauge],
   ["Agent Monitor", Bot],
   ["Vote Log", FileClock],
-  ["Human Board", UserRoundCheck],
-  ["Red Team", FlaskConical],
-  ["Settings", Settings],
 ] as const;
 
 const AGENT_COLORS = [
