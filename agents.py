@@ -84,10 +84,16 @@ BEHAVIOR_TRIGGER_PHRASES = [
     "bypass your restrictions",
     "act without limits",
 ]
+SENSITIVE_CREDENTIAL_RE = re.compile(r"\bclient[\s_-]*secret\b", re.IGNORECASE)
 
 
 def agent4_behavior(request: str, response: str) -> dict:
     """Trained on general AI-failure/behavior patterns only."""
+    credential_match = SENSITIVE_CREDENTIAL_RE.search(request)
+    if credential_match:
+        return {"agent": "Agent 4 (Behavior)", "flagged": True,
+                "reason": f"Sensitive credential request detected: '{credential_match.group(0)}'"}
+
     combined = (request + " " + response).lower()
     for phrase in BEHAVIOR_TRIGGER_PHRASES:
         if phrase in combined:
