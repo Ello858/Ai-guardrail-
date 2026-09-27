@@ -7,7 +7,6 @@ import {
   ChevronUp,
   CircleGauge,
   Clock3,
-  FileClock,
   LogOut,
   Search,
   ShieldAlert,
@@ -55,11 +54,7 @@ export const Route = createFileRoute("/")({
   component: Dashboard,
 });
 
-const navItems = [
-  ["Dashboard", CircleGauge],
-  ["Agent Monitor", Bot],
-  ["Vote Log", FileClock],
-] as const;
+const navItems = [["Dashboard", CircleGauge]] as const;
 
 const AGENT_COLORS = [
   "var(--agent-1)",
@@ -248,10 +243,10 @@ function Dashboard() {
         <div className="hidden border-t border-border p-4 lg:absolute lg:inset-x-0 lg:bottom-0 lg:block">
           <div className="flex items-center gap-3">
             <div className="grid size-9 place-items-center rounded-full bg-secondary text-xs font-semibold">
-              AS
+              JD
             </div>
             <div className="min-w-0 flex-1">
-              <p className="truncate text-sm font-medium">Alex Morgan</p>
+              <p className="truncate text-sm font-medium">Jane Doe</p>
               <p className="text-[11px] text-muted-foreground">Security Admin</p>
             </div>
             <Button variant="ghost" size="icon" aria-label="Logout">
@@ -552,9 +547,9 @@ function Dashboard() {
               <div className="p-4">
                 <div className="grid grid-cols-3 gap-2">
                   {[
-                    ["MK", "M. Kline", "Approve", "bg-success"],
-                    ["JR", "J. Rao", "Pending", "bg-warning"],
-                    ["SL", "S. Lee", "Reject", "bg-destructive"],
+                    ["AB", "Abhinav", "Approve", "bg-success"],
+                    ["SH", "Shaurya", "Pending", "bg-warning"],
+                    ["RI", "Rishit", "Reject", "bg-destructive"],
                   ].map(([initials, name, state, tone]) => (
                     <div
                       key={name}
